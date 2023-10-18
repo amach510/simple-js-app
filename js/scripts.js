@@ -35,7 +35,7 @@ let pokemonRepository = (function() {
 })();
 
 //Retrieve pokemonList array from IIFE
-let pokemonList = pokemonRepository.getAll();
+//let pokemonList = pokemonRepository.getAll();
 
 
 //forEach loop
