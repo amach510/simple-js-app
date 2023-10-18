@@ -1,15 +1,44 @@
+/*
+
+background-color: #DF6348 = soft-red
+font: 'Mohave', sans-serif = font
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+body {
+    background-color: #DF6348;
+    color: yellow;
+    font-family: 'Mohave', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    text-align: center;
+    margin-top: 35px;
+}
+
 .button-class {
     background-color: blue;
     border: none;
     color: white;
     padding: 16px 32px;
+    width: 200px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: white;
+    background-color: yellow;
     color: black;
     border: 2px solid blue;
   }
