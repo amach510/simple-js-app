@@ -29,10 +29,20 @@ let pokemonList = pokemonRepository.getAll();
 
 
 //forEach loop
-pokemonList.forEach(function(pokemon){
-    if(pokemon.height>1.0){
-        document.write(pokemon.name + "(height: " + pokemon.height + "m) - Wow, that\'s big! <br>");
-    }else{
-        document.write(pokemon.name + " " + "(height: " + pokemon.height + "m) <br>");
-    }
+// pokemonList.forEach(function(pokemon){
+//     if(pokemon.height>1.0){
+//         document.write(pokemon.name + "(height: " + pokemon.height + "m) - Wow, that\'s big! <br>");
+//     }else{
+//         document.write(pokemon.name + " " + "(height: " + pokemon.height + "m) <br>");
+//     }
+// });
+
+pokemonRepository.getAll().forEach(function(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
 });
