@@ -20,6 +20,10 @@ let pokemonRepository = (function() {
         listpokemon.appendChild(button);
         pokemonList.appendChild(listpokemon);
     }
+    
+    function showDetails(pokemon){
+        console.log(pokemon);
+    }
 
     function add(pokemon) {
         if(typeof pokemon === 'object') {
@@ -30,7 +34,8 @@ let pokemonRepository = (function() {
     return {
         getAll: getAll,
         add: add,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     };
 })();
 
