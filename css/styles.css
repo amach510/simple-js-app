@@ -80,6 +80,7 @@ ul {
     display: inline-block;
     box-sizing: border-box;
     background: #fff;
+    color: black;
     padding: 15px;
     width: 100%;
     max-width: 700px;
