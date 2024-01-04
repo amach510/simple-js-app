@@ -49,6 +49,7 @@ function addListItem(pokemon){
   pokemonList.appendChild(listpokemon);
   button.addEventListener('click', function(event){
       showDetails(pokemon);
+      showModal();
   });
 }
 
@@ -99,7 +100,13 @@ function showModal(title, text) {
       hideModal();
     }
   });
-}    
+}
+
+//Hide modal function
+function hideModal() {
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.remove('is-visible');
+}
 
 return {
   getAll: getAll,
