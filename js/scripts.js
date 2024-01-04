@@ -108,13 +108,23 @@ function hideModal() {
   modalContainer.classList.remove('is-visible');
 }
 
+//Esc key close
+window.addEventListener('keydown', (e) => {
+  let modalContainer = document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();  
+  }
+});
+
 return {
   getAll: getAll,
   add: add,
   addListItem: addListItem,
   showDetails: showDetails,
   loadList: loadList,
-  loadDetails: loadDetails
+  loadDetails: loadDetails,
+  showModal: showModal,
+  hideModal: hideModal
 };
 })();
 
