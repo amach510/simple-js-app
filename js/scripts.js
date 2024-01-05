@@ -49,13 +49,12 @@ function addListItem(pokemon){
   pokemonList.appendChild(listpokemon);
   button.addEventListener('click', function(event){
       showDetails(pokemon);
-      showModal(pokemon);
   });
 }
 
 function showDetails(pokemon) {
   pokemonRepository.loadDetails(pokemon).then(function () {
-    console.log(pokemon);
+    showModal(pokemon);
   });
 }
 
@@ -88,18 +87,13 @@ function showModal(pokemon) {
 
   let heightElement = document.createElement('p');
   heightElement.innerText = 'height: ' + pokemon.height;
- 
-  let typeElement = document.createElement('p');
-  typeElement.innerText = 'type: ' + JSON.stringify(pokemon.types);
 
   let imgElement = document.createElement('img');
-  imgElement.src = 'item.imageUrl';
-
+  imgElement.src = pokemon.imageUrl;
 
   modalContainer.appendChild(modal);
   modal.appendChild(titleElement);
   modal.appendChild(heightElement);
-  modal.appendChild(typeElement);
   modal.appendChild(imgElement);
   modalContainer.classList.add('is-visible');
 
