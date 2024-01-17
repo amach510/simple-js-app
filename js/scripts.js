@@ -40,8 +40,11 @@ function getAll() {
 }
 
 function addListItem(pokemon){     
-  let pokemonList = document.querySelector(".pokemon-list");
+  let pokemonList = document.querySelector(".list-group-item");
   let listpokemon = document.createElement("li");
+  // bootstrap class
+  listpokemon.classList.add ('list-group-item');
+  // button for li
   let button = document.createElement("button");
   button.innerText = pokemon.name;
   button.classList.add("button-class");
