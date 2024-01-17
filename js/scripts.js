@@ -46,6 +46,8 @@ function addListItem(pokemon){
   listpokemon.classList.add ('list-group-item');
   // button for li
   let button = document.createElement("button");
+  // boostrap class
+  button.classList.add('button');
   button.innerText = pokemon.name;
   button.classList.add("button-class");
   listpokemon.appendChild(button);
