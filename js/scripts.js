@@ -46,7 +46,7 @@ function addListItem(pokemon){
   listpokemon.classList.add ('list-group-item');
   // button for li
   let button = document.createElement("button");
-  // boostrap class
+  // bootstrap class
   button.classList.add('btn');
   button.setAttribute('data-toggle', 'modal'); // bootstrap attr
   button.setAttribute('data-target', '#modal'); // bootstrap attr
@@ -92,13 +92,12 @@ function showModal(pokemon) {
   
   //creating element for height in modal content
   let heightElement = document.createElement('p');
-  heightElement.innerText = 'height: ' + pokemon.height;
+  heightElement.innerText = 'height: ' + item.height;
 
   //Add the new modal content
   modalTitle.appendChild(nameElement);
   modalBody.appendChild(imageElement);
   modalBody.appendChild(heightElement);
-  modalBody.appendChild(typeElement);
 }
 
 return {
