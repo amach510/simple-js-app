@@ -48,6 +48,8 @@ function addListItem(pokemon){
   let button = document.createElement("button");
   // boostrap class
   button.classList.add('btn');
+  button.setAttribute('data-toggle', 'modal'); // bootstrap attr
+  button.setAttribute('data-target', '#modal'); // bootstrap attr
   button.innerText = pokemon.name;
   button.classList.add("button-class");
   listpokemon.appendChild(button);
@@ -71,58 +73,33 @@ function add(pokemon) {
 
   // Create modal
 function showModal(pokemon) {
-  let modalContainer = document.querySelector('#modal-container');
+  let modalBody = document.querySelector('.modal-body');
+  let modalTitle = document.querySelector('.modal-title');
+  let modalHeader = document.querySelector('.modal-header');
 
   //Clear all existing modal content
-  modalContainer.innerHTML = '';
+  modalTitle.innerHTML = '';
+  modalBody.innerHTML = '';
 
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
-
-  //Add the new modal content
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'Close';
-  closeButtonElement.addEventListener('click', hideModal);
-
-  modal.appendChild(closeButtonElement);
-
-  let titleElement = document.createElement('h1');
-  titleElement.innerText = pokemon.name;
-
+  //creating element for name in modal content
+  let nameElement = document.createElement('h1');
+  nameElement.innerText = item.name;
+  
+  //creating img in modal content
+  let imageElement = document.createElement('img');
+  imageElement.classList.add('modal-img');
+  imageElement.setAttribute('src', item.imageUrl);
+  
+  //creating element for height in modal content
   let heightElement = document.createElement('p');
   heightElement.innerText = 'height: ' + pokemon.height;
 
-  let imgElement = document.createElement('img');
-  imgElement.src = pokemon.imageUrl;
-
-  modalContainer.appendChild(modal);
-  modal.appendChild(titleElement);
-  modal.appendChild(heightElement);
-  modal.appendChild(imgElement);
-  modalContainer.classList.add('is-visible');
-
-  modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
+  //Add the new modal content
+  modalTitle.appendChild(nameElement);
+  modalBody.appendChild(imageElement);
+  modalBody.appendChild(heightElement);
+  modalBody.appendChild(typeElement);
 }
-
-//Hide modal function
-function hideModal() {
-  let modalContainer = document.querySelector('#modal-container');
-  modalContainer.classList.remove('is-visible');
-}
-
-//Esc key close
-window.addEventListener('keydown', (e) => {
-  let modalContainer = document.querySelector('#modal-container');
-  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-    hideModal();  
-  }
-});
 
 return {
   getAll: getAll,
@@ -131,8 +108,7 @@ return {
   showDetails: showDetails,
   loadList: loadList,
   loadDetails: loadDetails,
-  showModal: showModal,
-  hideModal: hideModal
+  showModal: showModal
 };
 })();
 
