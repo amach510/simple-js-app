@@ -75,7 +75,6 @@ function add(pokemon) {
 function showModal(pokemon) {
   let modalBody = document.querySelector('.modal-body');
   let modalTitle = document.querySelector('.modal-title');
-  let modalHeader = document.querySelector('.modal-header');
 
   //Clear all existing modal content
   modalTitle.innerHTML = '';
@@ -83,16 +82,16 @@ function showModal(pokemon) {
 
   //creating element for name in modal content
   let nameElement = document.createElement('h1');
-  nameElement.innerText = item.name;
+  nameElement.innerText = pokemon.name;
   
   //creating img in modal content
   let imageElement = document.createElement('img');
   imageElement.classList.add('modal-img');
-  imageElement.setAttribute('src', item.imageUrl);
+  imageElement.setAttribute('src', pokemon.imageUrl);
   
   //creating element for height in modal content
   let heightElement = document.createElement('p');
-  heightElement.innerText = 'height: ' + item.height;
+  heightElement.innerText = 'height: ' + pokemon.height;
 
   //Add the new modal content
   modalTitle.appendChild(nameElement);
