@@ -118,3 +118,14 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+// Create input search bar
+let form = document.querySelector('.form-inline');
+let input = document.createElement('input');
+input.classList.add('form-control');
+input.classList.add('mr-2');
+input.classList.add('my-1');
+input.setAttribute('type', 'text');
+input.setAttribute('placeholder', 'Search');
+input.setAttribute('aria-label', 'Search');
+form.appendChild(input);
