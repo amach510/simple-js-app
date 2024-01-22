@@ -129,3 +129,11 @@ input.setAttribute('type', 'text');
 input.setAttribute('placeholder', 'Search');
 input.setAttribute('aria-label', 'Search');
 form.appendChild(input);
+
+// Live search function
+function searchFunction() {
+  // Declare variables
+  var filter, li, i, txtValue, buttonPokemon;
+  filter = input.value.toUpperCase();
+  li = document.getElementsByClassName('list-group-item');
+}
