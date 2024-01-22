@@ -40,7 +40,7 @@ function getAll() {
 }
 
 function addListItem(pokemon){     
-  let pokemonList = document.querySelector(".list-group-item");
+  let pokemonList = document.querySelector(".row");
   let listpokemon = document.createElement("li");
   // bootstrap class
   listpokemon.classList.add ('list-group-item');
@@ -108,7 +108,7 @@ return {
   showDetails: showDetails,
   loadList: loadList,
   loadDetails: loadDetails,
-  showModal: showModal
+  showModal: showModal,
 };
 })();
 
