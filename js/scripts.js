@@ -136,4 +136,17 @@ function searchFunction() {
   var filter, li, i, txtValue, buttonPokemon;
   filter = input.value.toUpperCase();
   li = document.getElementsByClassName('list-group-item');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        buttonPokemon = li[i].getElementsByClassName('button-class')[0];
+        txtValue = buttonPokemon.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
 }
+
+input.addEventListener('keyup', searchFunction);
