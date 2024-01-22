@@ -48,8 +48,10 @@ function addListItem(pokemon){
   let button = document.createElement("button");
   // bootstrap class
   button.classList.add('btn');
-  button.setAttribute('data-toggle', 'modal'); // bootstrap attr
-  button.setAttribute('data-target', '#modal'); // bootstrap attr
+  // bootstrap attribute
+  button.setAttribute('data-toggle', 'modal');
+  // bootstrap attribute
+  button.setAttribute('data-target', '#modal');
   button.innerText = pokemon.name;
   button.classList.add("button-class");
   listpokemon.appendChild(button);
@@ -80,16 +82,16 @@ function showModal(pokemon) {
   modalTitle.innerHTML = '';
   modalBody.innerHTML = '';
 
-  //creating element for name in modal content
+  //Creating element for name in modal content
   let nameElement = document.createElement('h1');
   nameElement.innerText = pokemon.name;
   
-  //creating img in modal content
+  //Creating img in modal content
   let imageElement = document.createElement('img');
   imageElement.classList.add('modal-img');
   imageElement.setAttribute('src', pokemon.imageUrl);
   
-  //creating element for height in modal content
+  //Creating element for height in modal content
   let heightElement = document.createElement('p');
   heightElement.innerText = 'height: ' + pokemon.height;
 
