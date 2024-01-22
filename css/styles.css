@@ -12,6 +12,7 @@ font: 'Mohave', sans-serif = font
 h1 {
     font-size: 30px;
     font-weight: 700;
+    color: yellow;
 }
 
 body {
@@ -37,9 +38,6 @@ body {
 }
 
 .button-class {
-    /* background-color: blue;
-    border: none;
-    color: black; */
     padding: 16px 32px;
     width: 200px;
     text-align: center;

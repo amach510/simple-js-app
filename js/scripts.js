@@ -44,6 +44,9 @@ function addListItem(pokemon){
   let listpokemon = document.createElement("li");
   // bootstrap class
   listpokemon.classList.add ('list-group-item');
+  //added columns to center
+  listpokemon.classList.add('col-12');
+  listpokemon.classList.add('col-md-3');
   // button for li
   let button = document.createElement("button");
   // bootstrap class
