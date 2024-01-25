@@ -40,15 +40,15 @@ function getAll() {
 }
 
 function addListItem(pokemon){     
-  let pokemonList = document.querySelector(".row");
-  let listpokemon = document.createElement("li");
+  let pokemonList = document.querySelector('.row');
+  let listpokemon = document.createElement('li');
   // bootstrap class
   listpokemon.classList.add ('list-group-item');
   //added columns to center
   listpokemon.classList.add('col-12');
   listpokemon.classList.add('col-md-3');
   // button for li
-  let button = document.createElement("button");
+  let button = document.createElement('button');
   // bootstrap class
   button.classList.add('btn');
   // bootstrap attribute
@@ -56,10 +56,10 @@ function addListItem(pokemon){
   // bootstrap attribute
   button.setAttribute('data-target', '#modal');
   button.innerText = pokemon.name;
-  button.classList.add("button-class");
+  button.classList.add('button-class');
   listpokemon.appendChild(button);
   pokemonList.appendChild(listpokemon);
-  button.addEventListener('click', function(event){
+  button.addEventListener('click', function(){
       showDetails(pokemon);
   });
 }
